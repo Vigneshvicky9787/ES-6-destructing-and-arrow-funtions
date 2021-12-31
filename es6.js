@@ -29,13 +29,41 @@ function getScores( ){
 const obj = {
     Name: 'vignesh',
     email: 'vicky5760rr@gmail.com',
-    age: 20
+    age: 20,
+    password: 'hello'
 }
 console.log(obj.email) /* it is a normal declartion*/
 
-let {email,age,password,Name} = obj /* it is destrucring declaration*/
+const {email,age,password = "",Name} = obj /* it is destrucring declaration*/
 // if change the order it will show the same result. because the obj name and the variable name is also same it checks him 
 // order dosen't matter 
 console.log(Name)
 console.log(password)
 console.log(email)
+
+
+//-------------- desructrucring arrow functions------------
+
+// function demoFunction(a,b){/* It's a normal traditonal funtion declaration */
+//     return a+b
+// }
+// console.log(demoFunction(10,20))
+
+
+let demoFunction = (x,y) => {/* This arrow funtion automatically have return value */
+     return x+y
+}
+console.log(demoFunction(10,20))
+
+
+// objects
+
+const counter = {
+    count: 2,
+    next: () => {
+  return ++(this.count);/*this keyword didn't work in arrow function */
+}
+}
+
+console.log(counter.next());
+console.log(counter.next());
