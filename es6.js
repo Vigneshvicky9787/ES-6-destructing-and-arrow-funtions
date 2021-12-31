@@ -60,8 +60,8 @@ console.log(demoFunction(10,20))
 
 const counter = {
     count: 2,
-    next: () => {
-  return ++(this.count);/*this keyword didn't work in arrow function */
+    next: () => {/* to fix this error use funtion or use object name */
+  return ++(this.count);/*this keyword  work in arrow function refer to window */
 }
 }
 
